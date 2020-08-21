@@ -1,0 +1,10 @@
+{
+  "login": {
+    "welcome": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Login",
+    "register": "Register",
+    "skip": "Skip"
+  }
+}

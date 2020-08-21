@@ -3,6 +3,10 @@ import Login from './src/screens/Login';
 import Home from './src/screens/Home';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
+import {I18nextProvider} from 'react-i18next';
+import i18n from './src/translations/il18';
+import {Provider} from 'react-redux';
+
 const Stack = createStackNavigator();
 
 export default class App extends Component {
