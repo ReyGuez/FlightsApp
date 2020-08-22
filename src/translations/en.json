@@ -6,5 +6,8 @@
     "signIn": "Login",
     "register": "Register",
     "skip": "Skip"
+  },
+  "signin":{
+    "newUse": "New user"
   }
 }

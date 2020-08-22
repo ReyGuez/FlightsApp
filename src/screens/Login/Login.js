@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
   StatusBar,
+  Image,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import i18n from '../../translations/il18';
@@ -27,7 +28,10 @@ export default class Login extends Component {
             barStyle="light-content"
           />
           <View style={styles.root}>
-            <View style={{flex: 0.2}} />
+            <View style={{flex: 0.2}} >
+              <Image source = {require('../../../assets/logos/Vuelos.png')}
+              style = {{height:50, width:50}} />
+            </View>
             <View style={{flex: 1}}>
               <Text style={styles.advice}>{i18n.t('login.welcome')}</Text>
               <View style={{marginHorizontal: '10%', flex: 1}}>
@@ -59,7 +63,7 @@ export default class Login extends Component {
                   <Text style={styles.labelBtn}>{i18n.t('login.signIn')}</Text>
                 </TouchableOpacity>
                 <View style={styles.line} />
-                <TouchableOpacity style={[styles.btnLogin, {width: '60%'}]}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('NewUser')}  style={[styles.btnLogin, {width: '60%'}]}>
                   <Text style={styles.labelBtn}>
                     {i18n.t('login.register')}
                   </Text>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Login from './src/screens/Login';
 import Home from './src/screens/Home';
+import NewUser from './src/screens/NewUser';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {I18nextProvider} from 'react-i18next';
@@ -28,6 +29,17 @@ export default class App extends Component {
           <Stack.Screen
             name="Home"
             component={Home}
+            options={{
+              headerShown: false,
+              animationEnabled: true,
+              cardStyle: {
+                backgroundColor: 'white',
+              },
+            }}
+          />
+          <Stack.Screen
+            name="NewUser"
+            component={NewUser}
             options={{
               headerShown: false,
               animationEnabled: true,

@@ -6,5 +6,8 @@
     "signIn": "Entrar",
     "register": "Registrar",
     "skip": "Omitir"
-  }
+  },
+ "signin":{
+   "newUser": "Nuevo usuario"
+ }
 }
