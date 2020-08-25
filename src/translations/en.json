@@ -8,6 +8,12 @@
     "skip": "Skip"
   },
   "signin":{
-    "newUse": "New user"
+    "newUser": "New user",
+    "name": "Name (s)",
+    "lastName": "Last Name",
+    "email": "Email",
+    "password": "Password",
+    "nationality": "Nationality",
+    "register": "Register"
   }
 }

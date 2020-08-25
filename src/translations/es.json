@@ -1,13 +1,19 @@
 {
   "login": {
     "welcome": "Iniciar sesión",
-    "email": "Correo.",
+    "email": "Correo",
     "password": "Contraseña",
     "signIn": "Entrar",
     "register": "Registrar",
     "skip": "Omitir"
   },
  "signin":{
-   "newUser": "Nuevo usuario"
+   "newUser": "Nuevo usuario",
+   "name": "Nombre (s)",
+   "lastName": "Apellido (s)",
+   "email": "Correo",
+   "password": "Contraseña",
+   "nationality": "Nacionalidad",
+   "register": "Registrarme"
  }
 }
