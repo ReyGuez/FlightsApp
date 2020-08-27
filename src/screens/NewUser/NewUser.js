@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   Text,
   StyleSheet,
@@ -7,80 +7,90 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import i18n from '../../translations/il18';
 
 export default class NewUser extends Component {
   render() {
     return (
-      <SafeAreaView style={styles.root}>
-        <View style={{ flex: 0.1 }} ></View>
-        <View style={styles.root}>
-          <Text style={styles.advice}>{i18n.t('signin.newUser')}</Text>
-          <View style={{ marginHorizontal: '10%', flex: 1, backgroundColor: 'blue' }}>
-            <Text style={styles.labels}>{i18n.t('signin.name')}</Text>
-            <View style={styles.inputs}>
-              <TextInput
-                keyboardType="names"
-                returnKeyType="next"
-                style={styles.textInputs}
-                onSubmitEditing={() => {
-                  this.pss.focus();
-                }}
-              />
+      <LinearGradient
+        start={{x: 0, y: 1}}
+        end={{x: 0, y: 0}}
+        colors={['#020b36', '#004290', '#01d7d9']}
+        style={{flex: 1}}>
+        <SafeAreaView style={styles.root}>
+          <View style={styles.root}>
+            <Text style={styles.advice}>{i18n.t('signin.newUser')}</Text>
+            <View style={{marginHorizontal: '10%', flex: 1}}>
+              <Text style={styles.labels}>{i18n.t('signin.name')}</Text>
+              <View style={styles.inputs}>
+                <TextInput
+                  returnKeyType="next"
+                  style={styles.textInputs}
+                  onSubmitEditing={() => {
+                    this.name.focus();
+                  }}
+                />
+              </View>
+              <Text style={styles.labels}>{i18n.t('signin.lastName')}</Text>
+              <View style={styles.inputs}>
+                <TextInput
+                  ref={input => {
+                    this.name = input;
+                  }}
+                  returnKeyType="next"
+                  style={styles.textInputs}
+                  onSubmitEditing={() => {
+                    this.lastName.focus();
+                  }}
+                />
+              </View>
+              <Text style={styles.labels}>{i18n.t('signin.email')}</Text>
+              <View style={styles.inputs}>
+                <TextInput
+                  ref={input => {
+                    this.lastName = input;
+                  }}
+                  keyboardType="email-address"
+                  returnKeyType="next"
+                  style={styles.textInputs}
+                  onSubmitEditing={() => {
+                    this.password.focus();
+                  }}
+                />
+              </View>
+              <Text style={styles.labels}>{i18n.t('signin.password')}</Text>
+              <View style={styles.inputs}>
+                <TextInput
+                  ref={input => {
+                    this.password = input;
+                  }}
+                  secureTextEntry
+                  returnKeyType="next"
+                  style={styles.textInputs}
+                  onSubmitEditing={() => {
+                    // this.pss.focus();
+                  }}
+                />
+              </View>
+              <Text style={styles.labels}>{i18n.t('signin.nationality')}</Text>
+              <View style={styles.inputs}>
+                <TextInput
+                  returnKeyType="next"
+                  style={styles.textInputs}
+                  onSubmitEditing={() => {}}
+                />
+              </View>
+              <View style={{flex: 0.5}} />
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Home')}
+                style={styles.btnSignUp}>
+                <Text style={styles.labelBtn}>{i18n.t('signin.register')}</Text>
+              </TouchableOpacity>
             </View>
-            <Text style={styles.labels}>{i18n.t('signin.lastName')}</Text>
-            <View style={styles.inputs}>
-              <TextInput
-                keyboardType="last-Name"
-                returnKeyType="next1"
-                style={styles.textInputs}
-                onSubmitEditing={() => {
-                  this.pss.focus();
-                }}
-              />
-            </View>
-            <Text style={styles.labels}>{i18n.t('signin.email')}</Text>
-            <View style={styles.inputs}>
-              <TextInput
-                keyboardType="email-address"
-                returnKeyType="next"
-                style={styles.textInputs}
-                onSubmitEditing={() => {
-                  this.pss.focus();
-                }}
-              />
-            </View>
-            <Text style={styles.labels}>{i18n.t('signin.password')}</Text>
-            <View style={styles.inputs}>
-              <TextInput
-                keyboardType="password"
-                returnKeyType="next"
-                style={styles.textInputs}
-                onSubmitEditing={() => {
-                  this.pss.focus();
-                }}
-              />
-            </View>
-            <Text style={styles.labels}>{i18n.t('signin.nationality')}</Text>
-            <View style={styles.inputs}>
-              <TextInput
-                keyboardType="nationality"
-                returnKeyType="next"
-                style={styles.textInputs}
-                onSubmitEditing={() => {
-                  this.pss.focus();
-                }}
-              />
-            </View>
-            <View style={{ flex: 0.5 }} ></View>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Home')}
-              style={styles.btnSignUp}>
-              <Text style={styles.labelBtn}>{i18n.t('signin.register')}</Text>
-            </TouchableOpacity>
           </View>
-        </View>
-      </SafeAreaView>
+        </SafeAreaView>
+      </LinearGradient>
     );
   }
 }
@@ -125,5 +135,5 @@ const styles = StyleSheet.create({
   labelBtn: {
     fontSize: 23,
     color: 'white',
-  }
+  },
 });

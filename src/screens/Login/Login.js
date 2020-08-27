@@ -16,7 +16,6 @@ const {width} = Dimensions.get('screen');
 
 export default class Login extends Component {
   render() {
-    console.log('i18n', i18n.t('login.welcome'));
     return (
       <LinearGradient
         start={{x: 0, y: 1}}
