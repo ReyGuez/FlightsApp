@@ -15,5 +15,9 @@
    "password": "Contraseña",
    "nationality": "Nacionalidad",
    "register": "Registrarme"
+ },
+ "search":{
+   "searchFlight": "Buscar Vuelo",
+   "searchFli": "Buscar"
  }
 }

@@ -75,8 +75,8 @@ export default class NewUser extends Component {
             <View style={{ flex: 0.5 }} ></View>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Home')}
-              style={styles.btnLogin}>
-              <Text style={styles.labelBtn}>{i18n.t('login.register')}</Text>
+              style={styles.btnSignUp}>
+              <Text style={styles.labelBtn}>{i18n.t('signin.register')}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     color: 'black',
     paddingHorizontal: 15,
   },
-  btnLogin: {
+  btnSignUp: {
     backgroundColor: '#2191D0',
     width: '50%',
     alignSelf: 'center',

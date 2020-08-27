@@ -69,7 +69,7 @@ export default class Login extends Component {
                   </Text>
                 </TouchableOpacity>
                 <View style={styles.btnOmit}>
-                  <TouchableOpacity style={styles.bodyBtnOmit}>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchFlight')}style={styles.bodyBtnOmit}>
                     <Text style={[styles.labelBtn, {color: 'black'}]}>
                       {i18n.t('login.skip')}
                     </Text>
