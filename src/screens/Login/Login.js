@@ -11,11 +11,17 @@ import {
   Dimensions,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import i18n from '../../translations/il18';
 const {width} = Dimensions.get('screen');
 
-export default class Login extends Component {
+import {connect} from 'react-redux';
+import {Creators as LoginActions} from '../../store/ducks/login';
+import {bindActionCreators} from 'redux';
+import {withTranslation} from 'react-i18next';
+
+class Login extends Component {
   render() {
+    const {t} = this.props;
+    console.log('this-props', this.props);
     return (
       <LinearGradient
         start={{x: 0, y: 1}}
@@ -43,14 +49,17 @@ export default class Login extends Component {
                 }}>
                 <Image
                   source={require('../../../assets/logos/Vuelos.png')}
-                  style={{height: width < 330 ? 65 : 80, width:  width < 330 ? 65 :80}}
+                  style={{
+                    height: width < 330 ? 65 : 80,
+                    width: width < 330 ? 65 : 80,
+                  }}
                 />
               </View>
             </View>
             <View style={{flex: 1}}>
-              <Text style={styles.advice}>{i18n.t('login.welcome')}</Text>
+              <Text style={styles.advice}>{t('login.welcome')}</Text>
               <View style={{marginHorizontal: '10%', flex: 1}}>
-                <Text style={styles.labels}>{i18n.t('login.email')}</Text>
+                <Text style={styles.labels}>{t('login.email')}</Text>
                 <View style={styles.inputs}>
                   <TextInput
                     keyboardType="email-address"
@@ -61,7 +70,7 @@ export default class Login extends Component {
                     }}
                   />
                 </View>
-                <Text style={styles.labels}>{i18n.t('login.password')}</Text>
+                <Text style={styles.labels}>{t('login.password')}</Text>
                 <View style={styles.inputs}>
                   <TextInput
                     ref={input => {
@@ -75,20 +84,22 @@ export default class Login extends Component {
                 <TouchableOpacity
                   onPress={() => this.props.navigation.navigate('Home')}
                   style={styles.btnLogin}>
-                  <Text style={styles.labelBtn}>{i18n.t('login.signIn')}</Text>
+                  <Text style={styles.labelBtn}>{t('login.signIn')}</Text>
                 </TouchableOpacity>
                 <View style={styles.line} />
                 <TouchableOpacity
                   onPress={() => this.props.navigation.navigate('NewUser')}
                   style={[styles.btnLogin, {width: '60%'}]}>
-                  <Text style={styles.labelBtn}>
-                    {i18n.t('login.register')}
-                  </Text>
+                  <Text style={styles.labelBtn}>{t('login.register')}</Text>
                 </TouchableOpacity>
                 <View style={styles.btnOmit}>
-                  <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchFlight')}style={styles.bodyBtnOmit}>
+                  <TouchableOpacity
+                    onPress={() =>
+                      this.props.navigation.navigate('SearchFlight')
+                    }
+                    style={styles.bodyBtnOmit}>
                     <Text style={[styles.labelBtn, {color: 'black'}]}>
-                      {i18n.t('login.skip')}
+                      {t('login.skip')}
                     </Text>
                   </TouchableOpacity>
                 </View>
@@ -162,3 +173,18 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
+
+const mapStatetoProps = state => ({
+  login: state.login,
+});
+
+const mapDispatchToProps = dispatch => ({
+  ...bindActionCreators({LoginActions}, dispatch),
+});
+
+export default withTranslation()(
+  connect(
+    mapStatetoProps,
+    mapDispatchToProps,
+  )(Login),
+);
