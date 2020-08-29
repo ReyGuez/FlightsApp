@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1097472726088-vbeqcrcjqm2ikbt0tcgbffkdssbh6l0h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1097472726088-vbeqcrcjqm2ikbt0tcgbffkdssbh6l0h</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAkfLvATZUTCEx-Mgs7hPU3crJ-Hv24n1M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1097472726088</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.SmartFlights</string>
+	<key>PROJECT_ID</key>
+	<string>smartflights-5b638</string>
+	<key>STORAGE_BUCKET</key>
+	<string>smartflights-5b638.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1097472726088:ios:9a8b0c36fb9e2137bcb47d</string>
+	<key>DATABASE_URL</key>
+	<string>https://smartflights-5b638.firebaseio.com</string>
+</dict>
+</plist>

@@ -11,6 +11,11 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-firebase/app": "^8.4.0",
+    "@react-native-firebase/auth": "^9.1.2",
+    "@react-native-firebase/database": "^7.5.3",
+    "@react-native-firebase/firestore": "^7.6.1",
+    "@react-native-firebase/storage": "^7.4.2",
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.9.0",
     "i18n-js": "^3.3.0",
@@ -29,9 +34,9 @@
     "react-native-safe-area-context": "^3.1.4",
     "react-native-screens": "^2.10.1",
     "react-native-vector-icons": "^7.0.0",
-    "redux-devtools-extension": "^2.13.8",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "reduxsauce": "^1.0.1"
